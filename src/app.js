@@ -3,6 +3,7 @@ import config from './config';
 import cors from "cors";
 
 import campanasRoutes from './routes/campana.routes'
+import donacionRoutes from './routes/donacion.routes'
 
 import './database/connection'
 const app = express();
@@ -12,6 +13,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.set('port', config.port);
 app.use(campanasRoutes)
-
+app.use(donacionRoutes)
 
 export default app;

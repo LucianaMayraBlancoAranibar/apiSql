@@ -51,10 +51,10 @@ export const getCampanas = async (req,res) =>{
       const pool = await getConnection();
       await pool
         .request()
-        .input("nombre", sql.Text, nombre)
-        .input("requerimiento", sql.Text, requerimiento)
-        .input("fechaInicio", sql.Date, fechaInicio)
-        .input("fechaCierre", sql.Date, fechaCierre)
+        .input("nombre", sql.VarChar, nombre)
+        .input("requerimiento", sql.VarChar, requerimiento)
+        .input("fechaInicio", sql.DateTime, fechaInicio)
+        .input("fechaCierre", sql.DateTime, fechaCierre)
         .input("tipoCampaña", sql.Text, tipoCampaña)
         .input("establecimientoID", sql.Int, establecimientoID)
         .input("estado", sql.Int, estado)
